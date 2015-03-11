@@ -1,3 +1,0 @@
-use lulpeg to parse lua
-convert that to lua bytecode
-compile lua bytecode to javascript
