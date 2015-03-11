@@ -1,0 +1,13 @@
+{
+	"name": "l2js",
+	"version": "0.0.1",
+	"description": "Lua to JavaScript compiler",
+	"keywords": ["lua"],
+	"author": "CoderPuppy",
+	"homepage": "https://github.com/CoderPuppy/l2js",
+	"bugs": { "url": "https://github.com/CoderPuppy/l2js/issues" },
+	"license": "MIT",
+	"main": "lib/runtime.js",
+	"repository": { "type": "git", "url": "http://github.com/CoderPuppy/l2js.git" },
+	"private": true
+}
