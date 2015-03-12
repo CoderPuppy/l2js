@@ -2,16 +2,6 @@ local pretty = require 'pl.pretty'.write
 
 local compilers = {}
 
-local function compile(node, locals)
-	if not locals then
-		locals = {_ENV = '_ENV'}
-	end
-	if type(node) ~= 'table' or type(node.tag) ~= 'string' then error('Invalid AST node: ' .. pretty(node)) end
-	local compiler = compilers[node.tag]
-	if type(compiler) ~= 'function' then error('No compiler for AST node: ' .. pretty(node)) end
-	return compiler(node, locals)
-end
-
 local nextBID = 0
 local function block(locals)
 	local bid = nextBID
@@ -29,6 +19,16 @@ local function block(locals)
 			end
 		end;
 	})
+end
+
+local function compile(node, locals)
+	if not locals then
+		locals = block({__ENV = '__ENV'})
+	end
+	if type(node) ~= 'table' or type(node.tag) ~= 'string' then error('Invalid AST node: ' .. pretty(node)) end
+	local compiler = compilers[node.tag]
+	if type(compiler) ~= 'function' then error('No compiler for AST node: ' .. pretty(node)) end
+	return compiler(node, locals)
 end
 
 function compilers.Block(node, locals)

@@ -18,28 +18,7 @@ var L2JS$LT = L2JS.lt;
 var L2JS$GT = L2JS.gt;
 var L2JS$CONCAT = L2JS.concat;
 
-(function*() {
+var g = (function*() {
 var L2JS$TMP;
-while(L2JS$TMP = (false || true), L2JS$TMP !== undefined && L2JS$TMP !== null && L2JS$TMP !== false) {
-	var L2JS$TMP;
-	break;
-};
-var L2JS$TMP;
-yield* L2JS$CALL(yield* L2JS$GET(_ENV, "print"), [].concat("hi"));
-;
-do {
-	var L2JS$TMP;
-	var v2_a; L2JS$TMP = [].concat(yield* L2JS$GET(_ENV, "b")); v2_a = L2JS$TMP[0];
-	break;
-} while(((true || false) && true));
-if(false) {
-	var L2JS$TMP;
-	var v3_a; L2JS$TMP = [].concat(yield* L2JS$GET(_ENV, "b")); v3_a = L2JS$TMP[0];
-} else if(yield* L2JS$GET(_ENV, "hi")) {
-	var L2JS$TMP;
-} else {
-	var L2JS$TMP;
-};
-yield* L2JS$CALL(yield* L2JS$GET(_ENV, "print"), [].concat((yield* L2JS$CONCAT("hello", (yield* L2JS$CONCAT(" ", "world"))))));
 
-})().next()
+})(); var res; do { res = g.next([]) } while(!res.done)
