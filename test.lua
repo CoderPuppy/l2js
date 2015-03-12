@@ -8,15 +8,27 @@ _G.pp = (function(pretty)
  end)(require 'pl.pretty')
 local l2js = require './'
 local ast = l2js.parse([[
-	local t = {
-		hi = '123';
-		[123] = 'hi';
-		'hello world';
-	}
-	function t:hi()
-
+	while false or true do
+		break
 	end
-	print(#t + 1 - 1 * 1 / 1 // 1 % 1 ^ 1 * -1 < 1 > 1 == false)
+
+	do
+		print('hi')
+	end
+
+	repeat
+		local a = b
+		break
+	until (true or false) and true
+
+	if false then
+		local a = b
+
+	elseif hi then
+	else
+	end
+
+	print('hello' .. ' ' .. 'world')
 ]])
 -- pp(ast)
 local js = l2js.compile(ast)
