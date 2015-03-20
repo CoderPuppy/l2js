@@ -23,7 +23,7 @@ end
 
 local function compile(node, locals)
 	if not locals then
-		locals = block({__ENV = '__ENV'})
+		locals = block({_ENV = '_ENV'})
 	end
 	if type(node) ~= 'table' or type(node.tag) ~= 'string' then error('Invalid AST node: ' .. pretty(node)) end
 	local compiler = compilers[node.tag]
@@ -310,6 +310,4 @@ function compilers.If(node, locals)
 	return out
 end
 
-return function(ast)
-	return compile(ast)
-end
+return compile
